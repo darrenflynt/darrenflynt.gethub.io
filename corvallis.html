@@ -101,7 +101,31 @@
         <div class="city-nav footer-nav">
             <a href="portland.html">Portland</a><a href="hillsboro.html">Hillsboro</a><a href="wilsonville.html">Wilsonville</a><a href="salem.html">Salem</a><a href="newberg.html">Newberg</a><a href="mcminnville.html">McMinnville</a><a href="dundee.html">Dundee</a><a href="albany.html">Albany</a>
         </div>
+        <div style="margin-bottom: 2rem;">
+            <a href="privacy-policy.html" style="font-size: 0.6rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 2px; text-decoration: none; margin: 0 1rem;">Privacy Policy</a>
+            <a href="cookie-policy.html" style="font-size: 0.6rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 2px; text-decoration: none; margin: 0 1rem;">Cookie Policy</a>
+        </div>
         <p style="font-size: 0.6rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 2px;">© 2026 Darren Flynt. Strategic Advisory | Global Execution Network.</p>
     </div></footer>
+
+    <!-- Cookie Banner -->
+    <div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; z-index:9999; background:#0a0a0a; border-top:1px solid rgba(255,255,255,0.1); padding:1.5rem;">
+        <div class="container" style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:1rem;">
+            <p style="color:var(--text-dim); font-size:0.8rem; margin:0; max-width:700px;">This site uses cookies to understand how visitors interact with the content. By continuing to browse, you agree to the use of cookies as described in the <a href="cookie-policy.html" style="color:var(--accent);">Cookie Policy</a>.</p>
+            <div style="display:flex; gap:1rem; flex-shrink:0;">
+                <button onclick="acceptCookies()" class="btn" style="padding:0.7rem 1.5rem; font-size:0.7rem;">Accept</button>
+                <a href="cookie-policy.html" style="padding:0.7rem 1.5rem; font-size:0.7rem; color:var(--text-dim); text-decoration:none; text-transform:uppercase; letter-spacing:1px; border:1px solid rgba(255,255,255,0.1); border-radius:4px;">Learn More</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        function acceptCookies() {
+            localStorage.setItem('cookiesAccepted', 'true');
+            document.getElementById('cookie-banner').style.display = 'none';
+        }
+        if (!localStorage.getItem('cookiesAccepted')) {
+            document.getElementById('cookie-banner').style.display = 'block';
+        }
+    </script>
 </body>
 </html>
